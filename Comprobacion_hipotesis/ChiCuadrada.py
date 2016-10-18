@@ -10,6 +10,9 @@ alfa = 0
 intervalo = 0
 ajuste = False
 intervals = []
+oiei = []
+oieisqr = []
+finallist = []
 
 
 lst = [0.34,0.90, 0.25, 0.89, 0.87, 0.44, 0.12, 0.21, 0.46, 0.67, 0.83, 0.76,
@@ -49,7 +52,7 @@ while (cont < k):
     intervals.append((r,round((r+intervalo),10)))
     r = round(r+intervalo,10)
     cont += 1
-print (intervals)
+
 
 oi = [0]*len(intervals)
 
@@ -58,12 +61,34 @@ for i in lst:
         (menor,mayor) = x
         if((i>menor) & (i<=mayor)):
             oi[intervals.index(x)] += 1
+
+
+ei = [round(N/k,2)] * len(intervals)
+
+
+
+for i in oi:
+    oiei.append(round(i-ei[oi.index(i)],10))
+
+for i in oiei:
+    oieisqr.append(round(i**2,3))
+
+for i in oieisqr:
+    finallist.append(round(i/round(N/k,2),3))
+
+finalres = 0
+for i in finallist:
+    finalres += i
+
+finalres = round(finalres,2)
+
+
+
+
+print (intervals)
 print(oi)
-
-
-
-
-
-# print ("Cantdad de datos:",N)
-# print ("Intervalos:",intervalo)
-# print (max(lst))
+print (ei)
+print (oiei)
+print (oieisqr)
+print (finallist)
+print (finalres)
