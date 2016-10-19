@@ -53,7 +53,6 @@ while (cont < k):
     r = round(r+intervalo,10)
     cont += 1
 
-
 oi = [0]*len(intervals)
 
 for i in lst:
@@ -62,13 +61,30 @@ for i in lst:
         if((i>menor) & (i<=mayor)):
             oi[intervals.index(x)] += 1
 
+# Revisar si hay menos de 5 dentro de un rango
+oi2 = []
+for i in oi:
+    if (i<5):
+        if (oi.index(i) > 0):
+            anterior = oi[oi.index(i)-1]
+            siguiente = oi[oi.index(i)+1]
+            if (anterior > siguiente):
+                oi2.append(oi[oi.index(i)-1]+i)
+            else:
+                oi2.append(oi[oi.index(i)+1]+i)
+        else:
+            oi2.append(oi[oi.index(i)+1]+i)
+    else:
+        oi2.append(i)
+
+
+
 
 ei = [round(N/k,2)] * len(intervals)
 
 
-
-for i in oi:
-    oiei.append(round(i-ei[oi.index(i)],10))
+for i in oi2:
+    oiei.append(round(i-ei[oi2.index(i)],10))
 
 for i in oiei:
     oieisqr.append(round(i**2,3))
@@ -84,9 +100,9 @@ finalres = round(finalres,2)
 
 
 
-
+# Imprimir todos los valores
 print (intervals)
-print(oi)
+print(oi2)
 print (ei)
 print (oiei)
 print (oieisqr)
