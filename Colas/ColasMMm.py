@@ -1,14 +1,14 @@
 ##################################
-##            M/M/M             ##
+##            M/M/m            ##
 ##################################
 from math import *
 
-l = 4 #Llegadas por periodo de tiempo
-miu = 5 #Cuantos se atienden en el periodo
+l = 24 #Llegadas por periodo de tiempo
+miu = 30 #Cuantos se atienden en el periodo
 m = 2 #Cantidad de servidores
-k = 4 #Cantidad de gente en el sistema (Para la probabilidad de que haya mayor que k)
-Cs = 8 #Costo por servicio
-Cw = 10 #Costo por espera
+k = 2 #Cantidad de gente en el sistema (Para la probabilidad de que haya mayor que k)
+Cs = 18 #Costo por servicio
+Cw = 18 #Costo por espera
 
 cont = 0
 P0 = 0

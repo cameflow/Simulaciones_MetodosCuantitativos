@@ -11,7 +11,7 @@
 semilla = 117
 cantNumeros = 100
 a = 43
-m = 100
+m = 1000
 
 listaNumeros = []
 repite = False
@@ -21,6 +21,7 @@ cola = 0
 ciclo = 0
 
 cantAleatorios = 0
+# listaNumeros.append(semilla)
 #-------- Generación de números aleatorios ---------#
 while (cantAleatorios < cantNumeros):
     xn = (a * semilla) % m
@@ -31,7 +32,7 @@ while (cantAleatorios < cantNumeros):
             if(i == xn):
                 repite = True
                 valorRep = i
-                cola = cantAleatorios
+                cola = listaNumeros.index(i)
                 ciclo = cantAleatorios - cont
                 periodo = cola + ciclo
             cont += 1
@@ -43,8 +44,8 @@ while (cantAleatorios < cantNumeros):
 
 cont3 = 0
 for i in listaNumeros:
-    cont3 +=1
     print ("X"+ str(cont3)+": "+ str(i))
+    cont3 +=1
 print ("Valor repetido: " + str(valorRep))
 print ("Cola: "+str(cola))
 print ("Ciclo: "+str(ciclo))

@@ -2,7 +2,7 @@
 ##        MÉTODO DE CUADRADO MEDIO       ##
 ###########################################
 
-semilla = 5497
+semilla = 4380
 numeros = 100
 listofnum = []
 cola = 0
@@ -30,7 +30,7 @@ while (cont < numeros):
             if (int(x) == i):
                 existe = True
                 valor = i
-                cola = cont
+                cola = listofnum.index(i)
                 ciclo = cont - cont2
                 periodo = cola + ciclo
             cont2 += 1
